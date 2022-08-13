@@ -1,4 +1,3 @@
-const contentDisposition = require('content-disposition')
 const express = require('express')
 const mysql = require('mysql')
 const app = express()
@@ -20,7 +19,7 @@ app.post('/createdatabase',(req,res)=>{
         console.log('connected!')        
         connection.query('CREATE DATABASE User',(err,result)=>{
         if (err) throw err;
-        res.send('Database Created')
+        res.send('Database Created!!')
         })      
     })
 })
@@ -44,7 +43,7 @@ app.post('/insertuser',(req,res)=>{
     connection.connect((err)=>{
         if (err) throw err;
         console.log('connected')
-        var sql = "INSERT INTO Inventory (name,category,Exp_time,quantity,Manu_time,image) values ('Abhay Parmar','Mobile',now(),1,now(),LOAD_FILE('E:\Wallpaper\bricks.jpg'))"
+        var sql = "INSERT INTO Inventory (name,category,Exp_time,quantity,Manu_time,image) values ('Abhay','Mobile',now(),1,now(),LOAD_FILE('F:\Wallpaper\Cartoon .jpg'))"
         connection.query(sql,(err,result)=>{
         if (err) throw err;
             res.send('Insert Data Success')
